@@ -1,46 +1,54 @@
 # Silva Pneus - Borracharia Móvel
 
-Site institucional da Borracharia Silva Pneus, borracharia móvel com três bases no Rio de Janeiro (Parada de Lucas, Padre Miguel e Barra da Tijuca), com atendimento todos os dias até 22h.
+Site da Borracharia Silva Pneus, borracharia móvel com três bases no Rio de Janeiro (Parada de Lucas, Padre Miguel e Barra da Tijuca), com atendimento todos os dias até 22h.
+
+Demo: [borrachariasilva.vercel.app](https://borrachariasilva.vercel.app)
 
 ## Objetivo
 
-Levar o cliente que está com o pneu furado direto para o atendimento, com o menor número de cliques possível:
+Levar quem está com o pneu furado direto para o atendimento, com o menor número de toques possível:
 
-- botão de WhatsApp e de ligação sempre visíveis (barra fixa no celular)
-- botão "Enviar minha localização", que pega a geolocalização do navegador e já abre o WhatsApp com o link do Google Maps na mensagem
-- avaliações do Google em destaque como prova social
-- as três unidades (Parada de Lucas, Padre Miguel e Barra da Tijuca) com mapa, rota e bairros atendidos
-- SEO local com dados estruturados (schema.org `AutoRepair`)
-
-## Seções
-
-1. Hero com chamada para ação
-2. Como funciona (3 passos)
-3. Serviços
-4. Tipos de veículo atendidos
-5. Avaliações
-6. Unidades
-7. Perguntas frequentes
-8. Chamada final
+- telefone em destaque no topo, com toque para ligar
+- botão de WhatsApp e barra fixa no celular
+- botão "Mandar minha localização", que pega a geolocalização do navegador e abre o WhatsApp com o link do Google Maps na mensagem
+- as três bases com endereço e bairros atendidos
+- avaliações reais do Google
+- SEO local com dados estruturados (schema.org `AutoRepair`), Open Graph e favicon
 
 ## Tecnologias
 
-- HTML5, CSS3 e JavaScript puro, em um único arquivo, sem dependências de build
-- Google Fonts (Barlow Condensed e Inter)
-- Layout responsivo, mobile-first nas ações principais
-- Respeita `prefers-reduced-motion`
+- Next.js (App Router) com exportação estática (`output: "export"`)
+- React e TypeScript
+- Tailwind CSS 4
+- Fonte Archivo auto-hospedada via `@fontsource-variable/archivo` (sem chamada ao Google Fonts)
+
+## Estrutura
+
+```
+src/
+  app/          layout (metadados, SEO) e página
+  components/   seções do site (Hero, Servicos, Bases, Avaliacoes, Duvidas, Rodape...)
+  lib/dados.ts  todo o conteúdo: telefone, horário, serviços, bases, bairros, avaliações e perguntas
+public/img/     logo, favicon e imagem de compartilhamento
+```
+
+Para mudar telefone, horário, bairros ou textos, basta editar `src/lib/dados.ts`.
 
 ## Rodando localmente
 
-Basta abrir o `index.html` no navegador, ou servir a pasta:
-
 ```bash
-npx serve .
+npm install
+npm run dev        # desenvolvimento em http://localhost:3000
+npm run build      # gera o site estático na pasta out/
+npm run typecheck  # checagem de tipos
 ```
 
 ## Deploy
 
-Hospedado na Vercel como site estático, sem configuração adicional.
+O build gera HTML estático na pasta `out/`, então roda em qualquer hospedagem estática.
+
+- **Cloudflare Pages:** build command `npm run build`, output directory `out`.
+- **Vercel:** preset Next.js, sem configuração extra.
 
 ## Autor
 
