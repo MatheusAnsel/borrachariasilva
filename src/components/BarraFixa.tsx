@@ -1,5 +1,5 @@
-import { linkWhatsapp } from "@/lib/dados";
-import { BotaoLocalizacao } from "./BotaoLocalizacao";
+import { empresa, linkWhatsapp } from "@/lib/dados";
+import { IconeTelefone } from "./IconeTelefone";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
 // Barra presa embaixo da tela no celular, para quem está parado na rua chamar com um toque.
@@ -15,10 +15,13 @@ export function BarraFixa() {
         <IconeWhatsapp />
         WhatsApp
       </a>
-      <BotaoLocalizacao
-        rotulo="Localização"
+      <a
+        href={empresa.telefoneLink}
         className="flex flex-1 items-center justify-center gap-2 rounded-md bg-tinta py-3.5 text-[15px] font-bold text-placa"
-      />
+      >
+        <IconeTelefone />
+        Ligar
+      </a>
     </div>
   );
 }

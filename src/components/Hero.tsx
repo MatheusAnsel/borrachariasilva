@@ -1,7 +1,7 @@
 import { empresa, linkWhatsapp } from "@/lib/dados";
 import { formatarNota, type ResumoGoogle } from "@/lib/google";
 import { SeloSocorro } from "./Arte";
-import { BotaoLocalizacao } from "./BotaoLocalizacao";
+import { IconeTelefone } from "./IconeTelefone";
 import { ordem } from "@/lib/animacao";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
@@ -77,7 +77,13 @@ export function Hero({ resumo }: { resumo: ResumoGoogle }) {
           <IconeWhatsapp />
           Chamar no WhatsApp
         </a>
-        <BotaoLocalizacao className="inline-flex items-center justify-center gap-2.5 rounded-md bg-tinta px-6 py-4 text-[17px] font-bold text-placa hover:bg-asfalto" />
+        <a
+          href={empresa.telefoneLink}
+          className="inline-flex items-center justify-center gap-2.5 rounded-md bg-tinta px-6 py-4 text-[17px] font-bold text-placa hover:bg-asfalto"
+        >
+          <IconeTelefone />
+          Ligar agora
+        </a>
       </div>
 
       <p data-revelar="" style={ordem(6)} className="mt-8 text-[15px] text-asfalto">
