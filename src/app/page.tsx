@@ -3,6 +3,7 @@ import { Avaliacoes } from "@/components/Avaliacoes";
 import { BarraFixa } from "@/components/BarraFixa";
 import { Bases } from "@/components/Bases";
 import { Duvidas } from "@/components/Duvidas";
+import { Galeria } from "@/components/Galeria";
 import { Hero } from "@/components/Hero";
 import { Instagram } from "@/components/Instagram";
 import { Rodape } from "@/components/Rodape";
@@ -18,6 +19,7 @@ export default async function Pagina() {
       <main>
         <Hero resumo={resumo} />
         <div className="banda" aria-hidden="true" />
+        <Galeria />
         <Servicos />
         <Bases />
         <Avaliacoes resumo={resumo} />

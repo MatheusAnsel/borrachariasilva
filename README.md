@@ -13,6 +13,7 @@ Levar quem está com o pneu furado direto para o atendimento, com o menor númer
 - botão "Mandar minha localização", que pega a geolocalização do navegador e abre o WhatsApp com o link do Google Maps na mensagem
 - as três bases com endereço e bairros atendidos
 - nota, total e avaliações sincronizados com as 3 fichas do Google (atualização diária)
+- galeria com fotos reais dos atendimentos (rostos e placas de clientes desfocados)
 - mapa de cada base
 - modo escuro (padrão) e claro, com a escolha salva no navegador
 - animações de rolagem leves (respeitam a opção de reduzir movimento do sistema)
@@ -33,7 +34,7 @@ src/
   components/   seções do site (Hero, Servicos, Bases, Avaliacoes, Duvidas, Rodape...)
   lib/dados.ts  todo o conteúdo: telefone, horário, serviços, bases, bairros, avaliações e perguntas
   lib/google.ts busca nota e avaliações no Google Places API (New) durante o build
-public/img/     logo, favicon e imagem de compartilhamento
+public/img/     logo, favicon, imagem de compartilhamento e fotos dos atendimentos
 ```
 
 Para mudar telefone, horário, bairros ou textos, basta editar `src/lib/dados.ts`.

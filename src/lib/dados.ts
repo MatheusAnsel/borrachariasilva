@@ -162,3 +162,44 @@ export const perguntas: Pergunta[] = [
     resposta: "Chame no WhatsApp e confirme. Muitas vezes dá para ir, dependendo do horário.",
   },
 ];
+
+// Fotos publicadas pelo dono na ficha do Google. Rostos e placas de clientes desfocados.
+export type Foto = { src: string; alt: string; legenda: string; largura: number; altura: number };
+
+export const fotos: Foto[] = [
+  {
+    src: "/img/atendimentos/socorro-avenida.jpg",
+    alt: "Picape da Silva Pneus com compressor na caçamba, estacionada na beira da Avenida Brasil",
+    legenda: "Socorro na Avenida Brasil",
+    largura: 1140,
+    altura: 855,
+  },
+  {
+    src: "/img/atendimentos/guindaste.jpg",
+    alt: "Carro da Silva Pneus ao lado de um guindaste em um canteiro de obra",
+    legenda: "Guindaste em obra",
+    largura: 1140,
+    altura: 640,
+  },
+  {
+    src: "/img/atendimentos/caminhao-caxias.jpg",
+    alt: "Picape da Silva Pneus atendendo um caminhão em Duque de Caxias",
+    legenda: "Caminhão em Caxias",
+    largura: 482,
+    altura: 520,
+  },
+  {
+    src: "/img/atendimentos/patio-empresa.jpg",
+    alt: "Carro da Silva Pneus no pátio de uma empresa com caminhões e vans",
+    legenda: "Pátio de empresa",
+    largura: 1140,
+    altura: 390,
+  },
+  {
+    src: "/img/atendimentos/viaturas.jpg",
+    alt: "As duas viaturas da Silva Pneus estacionadas lado a lado",
+    legenda: "Nossas viaturas",
+    largura: 1140,
+    altura: 280,
+  },
+];
