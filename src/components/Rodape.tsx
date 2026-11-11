@@ -1,5 +1,6 @@
 import { bases, empresa, linkWhatsapp } from "@/lib/dados";
 import { ordem } from "@/lib/animacao";
+import { IconeInstagram } from "./IconeInstagram";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
 export function Rodape() {
@@ -36,7 +37,8 @@ export function Rodape() {
           ))}
           <div>
             <p className="font-bold text-white">{empresa.horario}</p>
-            <a href={empresa.instagram} target="_blank" rel="noopener" className="mt-1 inline-block underline underline-offset-4 hover:text-white">
+            <a href={empresa.instagram} target="_blank" rel="noopener" className="mt-2 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-vermelho">
+              <IconeInstagram />
               {empresa.instagramUsuario}
             </a>
           </div>

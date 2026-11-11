@@ -4,6 +4,7 @@ import { BarraFixa } from "@/components/BarraFixa";
 import { Bases } from "@/components/Bases";
 import { Duvidas } from "@/components/Duvidas";
 import { Hero } from "@/components/Hero";
+import { Instagram } from "@/components/Instagram";
 import { Rodape } from "@/components/Rodape";
 import { Servicos } from "@/components/Servicos";
 import { Topo } from "@/components/Topo";
@@ -20,6 +21,7 @@ export default async function Pagina() {
         <Servicos />
         <Bases />
         <Avaliacoes resumo={resumo} />
+        <Instagram />
         <Duvidas />
       </main>
       <Rodape />

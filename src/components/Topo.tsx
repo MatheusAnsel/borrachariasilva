@@ -1,5 +1,6 @@
 import { empresa } from "@/lib/dados";
 import { BotaoTema } from "./BotaoTema";
+import { IconeInstagram } from "./IconeInstagram";
 
 export function Topo() {
   return (
@@ -18,6 +19,16 @@ export function Topo() {
             <a href="#duvidas" className="hover:text-vermelho-escuro">Dúvidas</a>
           </nav>
           <div className="flex items-center gap-2">
+            <a
+              href={empresa.instagram}
+              target="_blank"
+              rel="noopener"
+              aria-label={`Instagram da Silva Pneus (${empresa.instagramUsuario})`}
+              title="Instagram"
+              className="grid size-10 place-items-center rounded-md border-2 border-tinta text-tinta hover:bg-concreto"
+            >
+              <IconeInstagram />
+            </a>
             <BotaoTema />
             <a href={empresa.telefoneLink} className="rounded-md bg-tinta px-4 py-2.5 text-sm font-bold text-placa md:hidden">
               Ligar
