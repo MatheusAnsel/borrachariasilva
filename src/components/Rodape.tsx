@@ -1,4 +1,5 @@
 import { bases, empresa, linkWhatsapp } from "@/lib/dados";
+import { ordem } from "@/lib/animacao";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
 export function Rodape() {
@@ -6,8 +7,10 @@ export function Rodape() {
     <footer className="bg-black text-white">
       <div className="banda" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 pt-14 pb-32 sm:px-6 md:pt-20 md:pb-14">
-        <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Parado com pneu furado?</h2>
+        <h2 data-revelar="" className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Parado com pneu furado?</h2>
         <a
+          data-revelar="entrar"
+          style={ordem(1)}
           href={empresa.telefoneLink}
           aria-label={`Ligar para ${empresa.telefoneExibicao}`}
           className="mt-4 block text-[clamp(2.3rem,10vw,5.5rem)] leading-none font-black tracking-tight hover:text-vermelho md:largo"

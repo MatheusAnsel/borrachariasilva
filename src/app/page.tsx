@@ -1,3 +1,4 @@
+import { Animacoes } from "@/components/Animacoes";
 import { Avaliacoes } from "@/components/Avaliacoes";
 import { BarraFixa } from "@/components/BarraFixa";
 import { Bases } from "@/components/Bases";
@@ -23,6 +24,7 @@ export default async function Pagina() {
       </main>
       <Rodape />
       <BarraFixa />
+      <Animacoes />
     </>
   );
 }

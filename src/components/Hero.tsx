@@ -1,19 +1,22 @@
 import { empresa, linkWhatsapp } from "@/lib/dados";
 import { formatarNota, type ResumoGoogle } from "@/lib/google";
 import { BotaoLocalizacao } from "./BotaoLocalizacao";
+import { ordem } from "@/lib/animacao";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
 export function Hero({ resumo }: { resumo: ResumoGoogle }) {
   const [ddd, numero] = empresa.telefoneExibicao.split(" ");
   return (
     <section className="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 md:pt-16 md:pb-20">
-      <h1 className="largo max-w-4xl text-[clamp(1.9rem,5.4vw,3.8rem)] leading-[1.02] font-extrabold tracking-tight">
+      <h1 data-revelar="" style={ordem(0)} className="largo max-w-4xl text-[clamp(1.9rem,5.4vw,3.8rem)] leading-[1.02] font-extrabold tracking-tight">
         Pneu furou?
         <br />
         A gente vai até você.
       </h1>
 
       <a
+        data-revelar="entrar"
+        style={ordem(2)}
         href={empresa.telefoneLink}
         aria-label={`Ligar para ${empresa.telefoneExibicao}`}
         className="mt-6 block w-fit whitespace-nowrap text-vermelho hover:text-vermelho-escuro md:mt-8"
@@ -26,12 +29,12 @@ export function Hero({ resumo }: { resumo: ResumoGoogle }) {
         </span>
       </a>
 
-      <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-asfalto md:mt-8 md:text-xl">
+      <p data-revelar="" style={ordem(4)} className="mt-6 max-w-[62ch] text-lg leading-relaxed text-asfalto md:mt-8 md:text-xl">
         Borracharia móvel com bases em Parada de Lucas, Padre Miguel e Barra da Tijuca. Troca e
         conserto de pneu no local, carga de bateria e reboque. {empresa.horario}.
       </p>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+      <div data-revelar="" style={ordem(5)} className="mt-8 flex flex-col gap-3 sm:flex-row">
         <a
           href={linkWhatsapp()}
           target="_blank"
@@ -44,7 +47,7 @@ export function Hero({ resumo }: { resumo: ResumoGoogle }) {
         <BotaoLocalizacao className="inline-flex items-center justify-center gap-2.5 rounded-md bg-tinta px-6 py-4 text-[17px] font-bold text-placa hover:bg-asfalto" />
       </div>
 
-      <p className="mt-8 text-[15px] text-asfalto">
+      <p data-revelar="" style={ordem(6)} className="mt-8 text-[15px] text-asfalto">
         <span className="mr-2 tracking-[2px] text-[#e8a400]" aria-hidden="true">★★★★★</span>
         Nota {formatarNota(resumo.nota)} no Google, com {resumo.total} avaliações.{" "}
         <a href="#avaliacoes" className="font-semibold text-tinta underline underline-offset-4">

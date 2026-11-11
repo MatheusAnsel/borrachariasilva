@@ -15,6 +15,7 @@ Levar quem está com o pneu furado direto para o atendimento, com o menor númer
 - nota, total e avaliações sincronizados com as 3 fichas do Google (atualização diária)
 - mapa de cada base
 - modo escuro (padrão) e claro, com a escolha salva no navegador
+- animações de rolagem leves (respeitam a opção de reduzir movimento do sistema)
 - SEO local com dados estruturados (schema.org `AutoRepair`), Open Graph e favicon
 
 ## Tecnologias

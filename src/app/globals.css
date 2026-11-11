@@ -70,3 +70,61 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='22'%3E%3Cpath d='M2 3l10 8-10 8M16 3l10 8-10 8' fill='none' stroke='%23ffffff' stroke-opacity='.85' stroke-width='3.2'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
 }
+
+/* ---------- Animações de rolagem ----------
+   Só valem com a classe "anima" no <html>, que o script do <head> coloca quando o
+   visitante não pediu para reduzir movimento. Sem JavaScript, tudo aparece normal. */
+.anima [data-revelar] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--ordem, 0) * 90ms);
+}
+.anima [data-revelar="entrar"] {
+  transform: translateX(-48px);
+}
+.anima [data-revelar][data-visivel] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Linhas dos serviços desenhadas da esquerda para a direita, como pincel de placa. */
+.anima [data-revelar="linha"] {
+  position: relative;
+  opacity: 1;
+  transform: none;
+  border-top-color: transparent;
+}
+.anima [data-revelar="linha"]::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tinta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.6, 0, 0.2, 1) calc(var(--ordem, 0) * 90ms);
+}
+.anima [data-revelar="linha"] > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s ease calc(var(--ordem, 0) * 90ms + 350ms),
+    transform 0.5s ease calc(var(--ordem, 0) * 90ms + 350ms);
+}
+.anima [data-revelar="linha"][data-visivel]::before {
+  transform: scaleX(1);
+}
+.anima [data-revelar="linha"][data-visivel] > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* A faixa de banda de rodagem anda junto com a rolagem. */
+.anima .banda {
+  background-position-x: calc(var(--rolagem, 0) * 1px);
+}

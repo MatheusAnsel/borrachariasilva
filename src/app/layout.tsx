@@ -79,10 +79,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        {/* Aplica o tema salvo antes de desenhar a página, para não piscar o escuro antes do claro. */}
+        {/* Antes de desenhar a página: aplica o tema salvo (sem piscar) e liga as animações, a menos que o visitante peça menos movimento. Se o JavaScript do site não carregar em 4s, as animações são desligadas para nada ficar escondido. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem("tema")==="claro"){document.documentElement.dataset.tema="claro";document.querySelector('meta[name="theme-color"]')?.setAttribute("content","#ffffff")}}catch(e){}`,
+            __html: `try{if(localStorage.getItem("tema")==="claro"){document.documentElement.dataset.tema="claro";document.querySelector('meta[name="theme-color"]')?.setAttribute("content","#ffffff")}}catch(e){}if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("anima");setTimeout(function(){if(!window.__animacoes)document.documentElement.classList.remove("anima")},4000)}`,
           }}
         />
       </head>

@@ -1,17 +1,18 @@
 import { bases } from "@/lib/dados";
+import { ordem } from "@/lib/animacao";
 
 export function Bases() {
   return (
     <section id="bases" className="scroll-mt-4 bg-concreto">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
-        <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Onde a gente atende</h2>
-        <p className="mt-3 max-w-[60ch] text-lg text-asfalto">
+        <h2 data-revelar="" className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Onde a gente atende</h2>
+        <p data-revelar="" style={ordem(1)} className="mt-3 max-w-[60ch] text-lg text-asfalto">
           São três bases. Cada uma cobre o próprio bairro e os vizinhos. Não achou o seu? Chame no
           WhatsApp e confirme.
         </p>
         <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
-          {bases.map((b) => (
-            <article key={b.nome}>
+          {bases.map((b, i) => (
+            <article key={b.nome} data-revelar="" style={ordem(i * 2)}>
               <iframe
                 title={`Mapa da base ${b.nome}`}
                 src={`https://maps.google.com/maps?q=${b.lat},${b.lng}&z=14&hl=pt-BR&output=embed`}

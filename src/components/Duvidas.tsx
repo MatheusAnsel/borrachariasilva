@@ -1,12 +1,13 @@
 import { perguntas } from "@/lib/dados";
+import { ordem } from "@/lib/animacao";
 
 export function Duvidas() {
   return (
     <section id="duvidas" className="mx-auto max-w-6xl scroll-mt-4 px-4 pb-16 sm:px-6 md:pb-24">
-      <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Perguntas comuns</h2>
+      <h2 data-revelar="" className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Perguntas comuns</h2>
       <div className="mt-8 max-w-3xl">
-        {perguntas.map((p) => (
-          <details key={p.pergunta} className="group border-t-2 border-tinta py-4 last:border-b-2">
+        {perguntas.map((p, i) => (
+          <details key={p.pergunta} data-revelar="" style={ordem(i)} className="group border-t-2 border-tinta py-4 last:border-b-2">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold [&::-webkit-details-marker]:hidden">
               {p.pergunta}
               <span aria-hidden="true" className="text-2xl leading-none font-normal text-vermelho group-open:hidden">+</span>
