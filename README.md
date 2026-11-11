@@ -14,6 +14,7 @@ Levar quem está com o pneu furado direto para o atendimento, com o menor númer
 - as três bases com endereço e bairros atendidos
 - nota, total e avaliações sincronizados com as 3 fichas do Google (atualização diária)
 - mapa de cada base
+- modo escuro (padrão) e claro, com a escolha salva no navegador
 - SEO local com dados estruturados (schema.org `AutoRepair`), Open Graph e favicon
 
 ## Tecnologias

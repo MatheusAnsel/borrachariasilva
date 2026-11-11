@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#121212",
 };
 
 const montarDadosEstruturados = (nota: number, total: number) => ({
@@ -77,7 +77,15 @@ const montarDadosEstruturados = (nota: number, total: number) => ({
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { nota, total } = await buscarResumoGoogle();
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {/* Aplica o tema salvo antes de desenhar a página, para não piscar o escuro antes do claro. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("tema")==="claro"){document.documentElement.dataset.tema="claro";document.querySelector('meta[name="theme-color"]')?.setAttribute("content","#ffffff")}}catch(e){}`,
+          }}
+        />
+      </head>
       <body>
         {children}
         <script

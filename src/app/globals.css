@@ -1,16 +1,37 @@
 @import "tailwindcss";
 
-/* Paleta tirada das placas pintadas de borracharia: parede branca, letra preta, tinta vermelha do logo. */
-@theme {
-  --color-placa: #ffffff;
-  --color-tinta: #000000;
-  --color-vermelho: #f20300;
-  --color-vermelho-escuro: #c40000;
-  --color-asfalto: #474747;
-  --color-concreto: #ededeb;
+/* Paleta tirada das placas pintadas de borracharia: preto, branco e a tinta vermelha do logo.
+   As cores mudam conforme o tema: escuro (padrão) ou claro (data-tema="claro" no <html>). */
+@theme inline {
+  --color-placa: var(--placa);
+  --color-tinta: var(--tinta);
+  --color-vermelho: var(--vermelho);
+  --color-vermelho-escuro: var(--vermelho-hover);
+  --color-asfalto: var(--asfalto);
+  --color-concreto: var(--concreto);
   --color-zap: #25d366;
   --color-zap-texto: #052e14;
   --font-sans: "Archivo Variable", system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --placa: #121212;
+  --tinta: #f4f4f2;
+  --vermelho: #ff2b1c;
+  --vermelho-hover: #ff6a5e;
+  --asfalto: #b3b3b0;
+  --concreto: #1d1d1d;
+}
+
+:root[data-tema="claro"] {
+  color-scheme: light;
+  --placa: #ffffff;
+  --tinta: #000000;
+  --vermelho: #f20300;
+  --vermelho-hover: #c40000;
+  --asfalto: #474747;
+  --concreto: #ededeb;
 }
 
 @layer base {
@@ -45,7 +66,7 @@
 /* Faixa de banda de rodagem: o único enfeite do site. */
 @utility banda {
   height: 22px;
-  background-color: var(--color-tinta);
+  background-color: #000;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='22'%3E%3Cpath d='M2 3l10 8-10 8M16 3l10 8-10 8' fill='none' stroke='%23ffffff' stroke-opacity='.85' stroke-width='3.2'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
 }
