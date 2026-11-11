@@ -22,31 +22,38 @@ export const empresa = {
 export const linkWhatsapp = (texto: string = empresa.mensagemWhatsapp) =>
   `https://wa.me/${empresa.whatsapp}?text=${encodeURIComponent(texto)}`;
 
-export type Servico = { nome: string; descricao: string };
+export type IconeServico = "pneu" | "furo" | "valvula" | "bateria" | "reboque" | "pesados";
+export type Servico = { nome: string; descricao: string; icone: IconeServico };
 
 export const servicos: Servico[] = [
   {
     nome: "Troca de pneu",
+    icone: "pneu",
     descricao: "Colocamos o estepe ou o pneu novo onde você estiver, com o aperto certo das porcas.",
   },
   {
     nome: "Conserto de furo",
+    icone: "furo",
     descricao: "Reparo do pneu furado no local, para você seguir sem precisar trocar.",
   },
   {
     nome: "Troca de válvula",
+    icone: "valvula",
     descricao: "Bico da roda vazando ou quebrado? Trocamos ali mesmo.",
   },
   {
     nome: "Carga de bateria",
+    icone: "bateria",
     descricao: "Carro não pega? Fazemos a carga rápida da bateria no local.",
   },
   {
     nome: "Reboque leve e pesado",
+    icone: "reboque",
     descricao: "Quando não dá para resolver na hora, levamos o veículo, do carro ao caminhão.",
   },
   {
     nome: "Pesados e máquinas",
+    icone: "pesados",
     descricao: "Caminhões, carretas, retroescavadeiras e guindastes, em obra, pátio ou porto.",
   },
 ];

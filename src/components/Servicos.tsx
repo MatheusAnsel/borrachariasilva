@@ -1,5 +1,6 @@
 import { servicos, veiculos } from "@/lib/dados";
 import { ordem } from "@/lib/animacao";
+import { IconeDeServico } from "./Arte";
 
 export function Servicos() {
   return (
@@ -11,8 +12,13 @@ export function Servicos() {
       <ul className="mt-10 grid gap-x-12 md:grid-cols-2">
         {servicos.map((s, i) => (
           <li key={s.nome} data-revelar="linha" style={ordem(i)} className="border-t-[3px] border-tinta py-5">
-            <h3 className="text-xl font-bold">{s.nome}</h3>
-            <p className="mt-1 text-asfalto">{s.descricao}</p>
+            <div className="flex gap-4">
+              <IconeDeServico icone={s.icone} className="size-11 shrink-0 text-tinta" />
+              <div>
+                <h3 className="text-xl font-bold">{s.nome}</h3>
+                <p className="mt-1 text-asfalto">{s.descricao}</p>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

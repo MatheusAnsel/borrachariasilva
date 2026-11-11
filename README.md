@@ -13,7 +13,8 @@ Levar quem está com o pneu furado direto para o atendimento, com o menor númer
 - botão "Mandar minha localização", que pega a geolocalização do navegador e abre o WhatsApp com o link do Google Maps na mensagem
 - as três bases com endereço e bairros atendidos
 - nota, total e avaliações sincronizados com as 3 fichas do Google (atualização diária)
-- galeria com fotos reais dos atendimentos (rostos e placas de clientes desfocados)
+- foto das viaturas de fundo no topo e galeria com fotos reais dos atendimentos (rostos e placas de clientes desfocados)
+- identidade visual tirada da plotagem dos carros: banda de rodagem, selo de socorro e ícones dos serviços
 - mapa de cada base
 - modo escuro (padrão) e claro, com a escolha salva no navegador
 - animações de rolagem leves (respeitam a opção de reduzir movimento do sistema)
