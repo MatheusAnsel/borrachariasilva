@@ -3,7 +3,7 @@ import { perguntas } from "@/lib/dados";
 export function Duvidas() {
   return (
     <section id="duvidas" className="mx-auto max-w-6xl scroll-mt-4 px-4 pb-16 sm:px-6 md:pb-24">
-      <h2 className="largo text-3xl font-extrabold tracking-tight md:text-5xl">Perguntas comuns</h2>
+      <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Perguntas comuns</h2>
       <div className="mt-8 max-w-3xl">
         {perguntas.map((p) => (
           <details key={p.pergunta} className="group border-t-2 border-tinta py-4 last:border-b-2">

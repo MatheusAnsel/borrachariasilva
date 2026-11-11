@@ -34,8 +34,9 @@
   }
 }
 
+/* Títulos na largura normal da fonte (antes 125%, ficava esticado). */
 @utility largo {
-  font-stretch: 125%;
+  font-stretch: 100%;
 }
 @utility estreito {
   font-stretch: 85%;

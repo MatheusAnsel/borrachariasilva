@@ -7,8 +7,10 @@ export function Hero({ resumo }: { resumo: ResumoGoogle }) {
   const [ddd, numero] = empresa.telefoneExibicao.split(" ");
   return (
     <section className="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 md:pt-16 md:pb-20">
-      <h1 className="largo max-w-3xl text-[clamp(1.9rem,5.4vw,3.6rem)] leading-[1.02] font-extrabold tracking-tight">
-        Pneu furou? A gente vai até você.
+      <h1 className="largo max-w-4xl text-[clamp(1.9rem,5.4vw,3.8rem)] leading-[1.02] font-extrabold tracking-tight">
+        Pneu furou?
+        <br />
+        A gente vai até você.
       </h1>
 
       <a
@@ -16,10 +18,10 @@ export function Hero({ resumo }: { resumo: ResumoGoogle }) {
         aria-label={`Ligar para ${empresa.telefoneExibicao}`}
         className="mt-6 block w-fit whitespace-nowrap text-vermelho hover:text-vermelho-escuro md:mt-8"
       >
-        <span className="block text-[clamp(1.6rem,7vw,2.2rem)] leading-none font-black md:inline md:mr-[.22em] md:text-[clamp(3rem,7.4vw,7rem)] md:largo">
+        <span className="block text-[clamp(1.6rem,7vw,2.2rem)] leading-none font-black md:inline md:mr-[.22em] md:text-[clamp(3rem,8.6vw,8rem)] md:largo">
           {ddd}
         </span>
-        <span className="block estreito whitespace-nowrap text-[clamp(3rem,16vw,6rem)] leading-[.92] font-black tracking-tight md:inline md:text-[clamp(3rem,7.4vw,7rem)] md:largo">
+        <span className="block estreito whitespace-nowrap text-[clamp(3rem,16vw,6rem)] leading-[.92] font-black tracking-tight md:inline md:text-[clamp(3rem,8.6vw,8rem)] md:largo">
           {numero}
         </span>
       </a>

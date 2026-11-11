@@ -6,7 +6,7 @@ export function Rodape() {
     <footer className="bg-tinta text-placa">
       <div className="banda" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 pt-14 pb-32 sm:px-6 md:pt-20 md:pb-14">
-        <h2 className="largo text-3xl font-extrabold tracking-tight md:text-5xl">Parado com pneu furado?</h2>
+        <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Parado com pneu furado?</h2>
         <a
           href={empresa.telefoneLink}
           aria-label={`Ligar para ${empresa.telefoneExibicao}`}

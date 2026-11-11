@@ -4,7 +4,7 @@ export function Bases() {
   return (
     <section id="bases" className="scroll-mt-4 bg-concreto">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
-        <h2 className="largo text-3xl font-extrabold tracking-tight md:text-5xl">Onde a gente atende</h2>
+        <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">Onde a gente atende</h2>
         <p className="mt-3 max-w-[60ch] text-lg text-asfalto">
           São três bases. Cada uma cobre o próprio bairro e os vizinhos. Não achou o seu? Chame no
           WhatsApp e confirme.
@@ -15,7 +15,7 @@ export function Bases() {
               <iframe
                 title={`Mapa da base ${b.nome}`}
                 src={`https://maps.google.com/maps?q=${b.lat},${b.lng}&z=14&hl=pt-BR&output=embed`}
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="block h-56 w-full border-0 border-t-[6px] border-t-vermelho bg-placa"
               />

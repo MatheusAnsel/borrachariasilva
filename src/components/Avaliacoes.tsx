@@ -4,7 +4,7 @@ import { formatarNota, type ResumoGoogle } from "@/lib/google";
 export function Avaliacoes({ resumo }: { resumo: ResumoGoogle }) {
   return (
     <section id="avaliacoes" className="mx-auto max-w-6xl scroll-mt-4 px-4 py-14 sm:px-6 md:py-20">
-      <h2 className="largo text-3xl font-extrabold tracking-tight md:text-5xl">O que dizem no Google</h2>
+      <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">O que dizem no Google</h2>
       <p className="mt-3 text-lg text-asfalto">
         Nota {formatarNota(resumo.nota)} com {resumo.total} avaliações nas três bases.
       </p>

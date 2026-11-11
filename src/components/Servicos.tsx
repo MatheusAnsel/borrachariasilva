@@ -3,7 +3,7 @@ import { servicos, veiculos } from "@/lib/dados";
 export function Servicos() {
   return (
     <section id="servicos" className="mx-auto max-w-6xl scroll-mt-4 px-4 py-14 sm:px-6 md:py-20">
-      <h2 className="largo text-3xl font-extrabold tracking-tight md:text-5xl">O que a gente resolve na rua</h2>
+      <h2 className="largo text-3xl font-extrabold tracking-tight text-balance md:text-5xl">O que a gente resolve na rua</h2>
       <p className="mt-3 max-w-[60ch] text-lg text-asfalto">
         Atendemos {veiculos}. A gente vai equipado e resolve ali mesmo.
       </p>
