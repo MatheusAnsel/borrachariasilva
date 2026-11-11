@@ -12,7 +12,8 @@ Levar quem está com o pneu furado direto para o atendimento, com o menor númer
 - botão de WhatsApp e barra fixa no celular
 - botão "Mandar minha localização", que pega a geolocalização do navegador e abre o WhatsApp com o link do Google Maps na mensagem
 - as três bases com endereço e bairros atendidos
-- avaliações reais do Google
+- nota, total e avaliações sincronizados com as 3 fichas do Google (atualização diária)
+- mapa de cada base
 - SEO local com dados estruturados (schema.org `AutoRepair`), Open Graph e favicon
 
 ## Tecnologias
@@ -29,6 +30,7 @@ src/
   app/          layout (metadados, SEO) e página
   components/   seções do site (Hero, Servicos, Bases, Avaliacoes, Duvidas, Rodape...)
   lib/dados.ts  todo o conteúdo: telefone, horário, serviços, bases, bairros, avaliações e perguntas
+  lib/google.ts busca nota e avaliações no Google Places API (New) durante o build
 public/img/     logo, favicon e imagem de compartilhamento
 ```
 
@@ -42,6 +44,16 @@ npm run dev        # desenvolvimento em http://localhost:3000
 npm run build      # gera o site estático na pasta out/
 npm run typecheck  # checagem de tipos
 ```
+
+## Avaliações do Google
+
+No build, `src/lib/google.ts` consulta a API do Google Places (New): acha cada ficha pelo nome e pela coordenada da base e busca nota, total e avaliações. O site mostra as 3 avaliações mais recentes com o nome do autor e o link para o Google.
+
+1. No Google Cloud, ative a **Places API (New)** e crie uma chave restrita a essa API.
+2. Na hospedagem, crie a variável de ambiente `GOOGLE_PLACES_API_KEY` com a chave. Ela só é usada no build e não vai para o navegador.
+3. Crie um deploy hook na hospedagem e salve a URL no segredo `DEPLOY_HOOK_URL` do repositório. O workflow `.github/workflows/atualizar-avaliacoes.yml` dispara um build por dia.
+
+Sem a chave, ou se o Google falhar, o site usa as avaliações salvas em `src/lib/dados.ts` e o build não quebra.
 
 ## Deploy
 

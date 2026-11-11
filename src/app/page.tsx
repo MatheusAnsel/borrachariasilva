@@ -6,17 +6,19 @@ import { Hero } from "@/components/Hero";
 import { Rodape } from "@/components/Rodape";
 import { Servicos } from "@/components/Servicos";
 import { Topo } from "@/components/Topo";
+import { buscarResumoGoogle } from "@/lib/google";
 
-export default function Pagina() {
+export default async function Pagina() {
+  const resumo = await buscarResumoGoogle();
   return (
     <>
       <Topo />
       <main>
-        <Hero />
+        <Hero resumo={resumo} />
         <div className="banda" aria-hidden="true" />
         <Servicos />
         <Bases />
-        <Avaliacoes />
+        <Avaliacoes resumo={resumo} />
         <Duvidas />
       </main>
       <Rodape />

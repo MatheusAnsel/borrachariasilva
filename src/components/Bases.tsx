@@ -9,10 +9,17 @@ export function Bases() {
           São três bases. Cada uma cobre o próprio bairro e os vizinhos. Não achou o seu? Chame no
           WhatsApp e confirme.
         </p>
-        <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
           {bases.map((b) => (
-            <article key={b.nome} className="border-t-[6px] border-vermelho pt-5">
-              <p className="text-sm font-semibold text-asfalto">{b.regiao}</p>
+            <article key={b.nome}>
+              <iframe
+                title={`Mapa da base ${b.nome}`}
+                src={`https://maps.google.com/maps?q=${b.lat},${b.lng}&z=14&hl=pt-BR&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="block h-56 w-full border-0 border-t-[6px] border-t-vermelho bg-placa"
+              />
+              <p className="mt-5 text-sm font-semibold text-asfalto">{b.regiao}</p>
               <h3 className="largo mt-1 text-[28px] leading-tight font-black">{b.nome}</h3>
               <p className="mt-3 text-[15px] text-asfalto">{b.endereco}</p>
               <h4 className="mt-5 text-[15px] font-bold">Bairros atendidos</h4>
@@ -23,7 +30,7 @@ export function Bases() {
                 rel="noopener"
                 className="mt-4 inline-block text-[15px] font-semibold underline underline-offset-4 hover:text-vermelho-escuro"
               >
-                Ver a base no mapa
+                Abrir no Google Maps
               </a>
             </article>
           ))}

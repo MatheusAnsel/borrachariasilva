@@ -1,8 +1,9 @@
 import { empresa, linkWhatsapp } from "@/lib/dados";
+import { formatarNota, type ResumoGoogle } from "@/lib/google";
 import { BotaoLocalizacao } from "./BotaoLocalizacao";
 import { IconeWhatsapp } from "./IconeWhatsapp";
 
-export function Hero() {
+export function Hero({ resumo }: { resumo: ResumoGoogle }) {
   const [ddd, numero] = empresa.telefoneExibicao.split(" ");
   return (
     <section className="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 md:pt-16 md:pb-20">
@@ -43,7 +44,7 @@ export function Hero() {
 
       <p className="mt-8 text-[15px] text-asfalto">
         <span className="mr-2 tracking-[2px] text-[#e8a400]" aria-hidden="true">★★★★★</span>
-        Nota {empresa.notaGoogle} no Google, com mais de 270 avaliações.{" "}
+        Nota {formatarNota(resumo.nota)} no Google, com {resumo.total} avaliações.{" "}
         <a href="#avaliacoes" className="font-semibold text-tinta underline underline-offset-4">
           Ler avaliações
         </a>

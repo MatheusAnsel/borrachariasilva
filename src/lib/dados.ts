@@ -55,6 +55,10 @@ export const veiculos = "carro, moto, van, caminhão, carreta e máquina pesada"
 
 export type Base = {
   nome: string;
+  // Nome exato da ficha no Google Maps, usado para achar as avaliações dela.
+  nomeNoGoogle: string;
+  // Opcional: ID da ficha no Google (ChIJ...). Se ficar vazio, o build descobre pelo nome.
+  placeId?: string;
   regiao: string;
   endereco: string;
   lat: number;
@@ -65,6 +69,7 @@ export type Base = {
 export const bases: Base[] = [
   {
     nome: "Parada de Lucas",
+    nomeNoGoogle: "BORRACHARIA MÓVEL SILVA PNEUS",
     regiao: "Zona Norte",
     endereco: "Av. Brasil, 13709, Parada de Lucas, Rio de Janeiro, RJ, 21010-075",
     lat: -22.8148742,
@@ -78,6 +83,7 @@ export const bases: Base[] = [
   },
   {
     nome: "Padre Miguel",
+    nomeNoGoogle: "Silva Borracharia Móvel",
     regiao: "Zona Oeste",
     endereco: "Av. Brasil, Padre Miguel, Rio de Janeiro, RJ, 21852-000",
     lat: -22.8609655,
@@ -91,6 +97,7 @@ export const bases: Base[] = [
   },
   {
     nome: "Barra da Tijuca",
+    nomeNoGoogle: "BORRACHARIA MÓVEL SILVA PNEUS 24H",
     regiao: "Barra e Jacarepaguá",
     endereco: "Av. das Américas, Barra da Tijuca, Rio de Janeiro, RJ, 22640-100",
     lat: -22.9996969,
@@ -105,6 +112,7 @@ export const bases: Base[] = [
 ];
 
 // Trechos copiados das avaliações públicas no Google, sem alteração de texto.
+// Só aparecem quando o build roda sem a chave da API do Google (veja src/lib/google.ts).
 export type Avaliacao = { texto: string; autor: string; base: string };
 
 export const avaliacoes: Avaliacao[] = [

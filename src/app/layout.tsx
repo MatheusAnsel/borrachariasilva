@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/archivo/wdth.css";
 import "./globals.css";
 import { SITE_URL, bases, empresa } from "@/lib/dados";
+import { buscarResumoGoogle } from "@/lib/google";
 
 const descricao =
   "Borracharia móvel com bases em Parada de Lucas, Padre Miguel e Barra da Tijuca. Troca e conserto de pneu no local, carga de bateria e reboque para carro, moto, caminhão e máquina. Todos os dias até 22h. WhatsApp: (21) 96016-6562.";
@@ -48,7 +49,7 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-const dadosEstruturados = {
+const montarDadosEstruturados = (nota: number, total: number) => ({
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   name: "Borracharia Móvel Silva Pneus",
@@ -68,19 +69,20 @@ const dadosEstruturados = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: String(empresa.totalAvaliacoes),
+    ratingValue: nota.toFixed(1),
+    reviewCount: String(total),
   },
-};
+});
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { nota, total } = await buscarResumoGoogle();
   return (
     <html lang="pt-BR">
       <body>
         {children}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(dadosEstruturados) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(montarDadosEstruturados(nota, total)) }}
         />
       </body>
     </html>
