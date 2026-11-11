@@ -6,10 +6,12 @@ export function Topo() {
   return (
     <header className="border-b-2 border-tinta bg-placa">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        {/* Selo branco atrás do logo: as letras pretas dele somem no fundo escuro. */}
-        <a href="#" aria-label="Silva Pneus, início" className="rounded-md bg-white px-2.5 py-1.5">
+        {/* Logo com letra clara no modo escuro e o original no modo claro. */}
+        <a href="#" aria-label="Silva Pneus, início">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/img/logo.png" alt="Silva Pneus" width={437} height={177} className="h-10 w-auto md:h-11" />
+          <img src="/img/logo-escuro.png" alt="Silva Pneus" width={437} height={177} className="block h-12 w-auto claro:hidden md:h-14" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/img/logo.png" alt="" aria-hidden="true" width={437} height={177} className="hidden h-12 w-auto claro:block md:h-14" />
         </a>
         <div className="flex items-center gap-7">
           <nav aria-label="Seções" className="hidden gap-7 text-[15px] font-semibold md:flex">

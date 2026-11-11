@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   icons: {
     icon: [
-      { url: "/img/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/img/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/img/favicon-32-escuro.png", sizes: "32x32", type: "image/png" },
+      { url: "/img/icon-512-escuro.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/img/apple-touch-icon.png",
+    apple: "/img/apple-touch-icon-escuro.png",
   },
   openGraph: {
     type: "website",

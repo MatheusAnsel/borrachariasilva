@@ -4,12 +4,33 @@ import { useEffect, useState } from "react";
 
 type Tema = "escuro" | "claro";
 
+// Ícone da aba: o padrão (definido no layout) é o escuro. No modo claro, acrescenta um
+// ícone próprio no fim do <head>, que o navegador usa no lugar do padrão.
+function aplicarIcones(tema: Tema) {
+  let icone = document.getElementById("icone-tema") as HTMLLinkElement | null;
+  if (tema === "escuro") {
+    icone?.remove();
+    return;
+  }
+  if (!icone) {
+    icone = document.createElement("link");
+    icone.id = "icone-tema";
+    icone.rel = "icon";
+    icone.type = "image/png";
+    icone.setAttribute("sizes", "32x32");
+    document.head.appendChild(icone);
+  }
+  icone.href = "/img/favicon-32.png";
+}
+
 // Alterna entre o modo escuro (padrão) e o claro e lembra a escolha no navegador.
 export function BotaoTema() {
   const [tema, setTema] = useState<Tema>("escuro");
 
   useEffect(() => {
-    setTema(document.documentElement.dataset.tema === "claro" ? "claro" : "escuro");
+    const atual: Tema = document.documentElement.dataset.tema === "claro" ? "claro" : "escuro";
+    setTema(atual);
+    aplicarIcones(atual);
   }, []);
 
   function alternar() {
@@ -18,6 +39,7 @@ export function BotaoTema() {
     if (novo === "claro") document.documentElement.dataset.tema = "claro";
     else delete document.documentElement.dataset.tema;
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", novo === "claro" ? "#ffffff" : "#121212");
+    aplicarIcones(novo);
     try {
       localStorage.setItem("tema", novo);
     } catch {

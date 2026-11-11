@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Variante "claro:" para estilos que só valem no modo claro. */
+@custom-variant claro (&:where([data-tema="claro"], [data-tema="claro"] *));
+
 /* Paleta tirada das placas pintadas de borracharia: preto, branco e a tinta vermelha do logo.
    As cores mudam conforme o tema: escuro (padrão) ou claro (data-tema="claro" no <html>). */
 @theme inline {
