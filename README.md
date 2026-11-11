@@ -1,6 +1,6 @@
-# Silva Pneus - Borracharia Móvel 24 Horas
+# Silva Pneus - Borracharia Móvel
 
-Site institucional da Silva Pneus, borracharia móvel com atendimento 24 horas na Av. Brasil e região, no Rio de Janeiro.
+Site institucional da Borracharia Silva Pneus, borracharia móvel com três bases no Rio de Janeiro (Parada de Lucas, Padre Miguel e Barra da Tijuca), com atendimento todos os dias até 22h.
 
 ## Objetivo
 
@@ -9,7 +9,7 @@ Levar o cliente que está com o pneu furado direto para o atendimento, com o men
 - botão de WhatsApp e de ligação sempre visíveis (barra fixa no celular)
 - botão "Enviar minha localização", que pega a geolocalização do navegador e já abre o WhatsApp com o link do Google Maps na mensagem
 - avaliações do Google em destaque como prova social
-- as duas unidades (Parada de Lucas e Padre Miguel) com mapa e rota
+- as três unidades (Parada de Lucas, Padre Miguel e Barra da Tijuca) com mapa, rota e bairros atendidos
 - SEO local com dados estruturados (schema.org `AutoRepair`)
 
 ## Seções
