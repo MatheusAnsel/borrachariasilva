@@ -56,9 +56,8 @@ img,svg{display:block}
 /* ---------- topo ---------- */
 .top{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand-name{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:28px;line-height:.8;text-transform:uppercase}
-.brand-name small{display:block;font-size:15px;color:var(--red);letter-spacing:.12em;text-align:right}
+.brand{display:flex;align-items:center;background:#fff;border-radius:10px;padding:4px 10px}
+.brand img{height:42px;width:auto}
 .nav{display:flex;gap:26px;font-size:14px;font-weight:500;color:#d4d4d4}
 .nav a:hover{color:var(--white)}
 .top-call{display:inline-flex;align-items:center;gap:8px;background:var(--red);padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap}
@@ -204,15 +203,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap}
 
 <header class="top">
   <div class="wrap">
-    <a href="#" class="brand" aria-label="Silva Pneus, início">
-      <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M4 22h14M2 30h12M4 38h10" stroke="#e10600" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="38" cy="32" r="22" fill="#111" stroke="#fff" stroke-width="3"/>
-        <circle cx="38" cy="32" r="13" fill="none" stroke="#e10600" stroke-width="4"/>
-        <circle cx="38" cy="32" r="4" fill="#fff"/>
-      </svg>
-      <span class="brand-name">Silva<small>Pneus</small></span>
-    </a>
+    <a href="#" class="brand" aria-label="Silva Pneus, início"><img src="img/logo.png" alt="Silva Pneus" width="437" height="177"></a>
     <nav class="nav" aria-label="Seções">
       <a href="#servicos">Serviços</a>
       <a href="#como">Como funciona</a>
