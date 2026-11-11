@@ -10,7 +10,7 @@ export const empresa = {
   telefoneLink: "tel:+5521960166562",
   whatsapp: "5521960166562",
   mensagemWhatsapp: "Olá, preciso de socorro de borracharia!",
-  horario: "Todos os dias até 22h",
+  horario: "Todos os dias, das 5h às 19h",
   instagram: "https://www.instagram.com/borracharia_silvapneus021/",
   instagramUsuario: "@borracharia_silvapneus021",
   google:
@@ -147,7 +147,7 @@ export type Pergunta = { pergunta: string; resposta: string };
 export const perguntas: Pergunta[] = [
   {
     pergunta: "Qual o horário de atendimento?",
-    resposta: "Todos os dias, inclusive fim de semana, até as 22h, nas três bases.",
+    resposta: "Todos os dias, inclusive fim de semana, das 5h às 19h, nas três bases.",
   },
   {
     pergunta: "Quanto tempo vocês levam para chegar?",

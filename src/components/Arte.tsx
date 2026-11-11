@@ -19,18 +19,21 @@ export function TrilhaPneu({ className = "" }: { className?: string }) {
 }
 
 // Selo de socorro com a seta circular, no estilo do "24h socorro" dos carros.
-export function SeloSocorro({ className = "", horario = "22h" }: { className?: string; horario?: string }) {
+export function SeloSocorro({ className = "", abre = "5h", fecha = "19h" }: { className?: string; abre?: string; fecha?: string }) {
   return (
-    <svg viewBox="0 0 220 220" role="img" aria-label={`Socorro todos os dias até ${horario}`} className={className}>
+    <svg viewBox="0 0 220 220" role="img" aria-label={`Socorro todos os dias, das ${abre} às ${fecha}`} className={className}>
       <circle cx="110" cy="110" r="104" fill="var(--placa)" stroke="var(--tinta)" strokeWidth="6" />
       {/* seta circular passando por cima, aberta embaixo */}
       <path d="M70 152.5 A62 62 0 1 1 150 152.5" fill="none" stroke="var(--tinta)" strokeWidth="12" strokeLinecap="round" />
       <path d="M140.8 160.2 L161.6 157.1 L147.6 140.1 Z" fill="var(--tinta)" />
-      <text x="110" y="82" textAnchor="middle" fontWeight="700" fontSize="20" fill="var(--tinta)" fontFamily="inherit">
-        até
+      <text x="110" y="72" textAnchor="middle" fontWeight="700" fontSize="16" fill="var(--tinta)" fontFamily="inherit">
+        das
       </text>
-      <text x="110" y="128" textAnchor="middle" fontWeight="900" fontSize="50" fill="var(--tinta)" fontFamily="inherit">
-        {horario}
+      <text x="110" y="104" textAnchor="middle" fontWeight="900" fontSize="38" fill="var(--tinta)" fontFamily="inherit">
+        {abre}
+      </text>
+      <text x="110" y="130" textAnchor="middle" fontWeight="800" fontSize="21" fill="var(--tinta)" fontFamily="inherit">
+        às {fecha}
       </text>
       <rect x="38" y="164" width="144" height="34" rx="4" fill="var(--vermelho)" />
       <text x="110" y="189" textAnchor="middle" fontWeight="900" fontSize="22" letterSpacing="2" fill="#fff" fontFamily="inherit">

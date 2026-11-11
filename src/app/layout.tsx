@@ -5,8 +5,8 @@ import { SITE_URL, bases, empresa } from "@/lib/dados";
 import { buscarResumoGoogle } from "@/lib/google";
 
 const descricao =
-  "Borracharia móvel com bases em Parada de Lucas, Padre Miguel e Barra da Tijuca. Troca e conserto de pneu no local, carga de bateria e reboque para carro, moto, caminhão e máquina. Todos os dias até 22h. WhatsApp: (21) 96016-6562.";
-const chamada = "Pneu furou? A gente vai até você. Três bases no Rio, todos os dias até 22h.";
+  "Borracharia móvel com bases em Parada de Lucas, Padre Miguel e Barra da Tijuca. Troca e conserto de pneu no local, carga de bateria e reboque para carro, moto, caminhão e máquina. Todos os dias, das 5h às 19h. WhatsApp: (21) 96016-6562.";
+const chamada = "Pneu furou? A gente vai até você. Três bases no Rio, todos os dias das 5h às 19h.";
 const titulo = "Silva Pneus | Borracharia Móvel no Rio de Janeiro";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: "/img/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Silva Pneus, borracharia móvel: pneu furou? A gente vai até você. Três bases no Rio, todos os dias até 22h.",
+        alt: "Silva Pneus, borracharia móvel: pneu furou? A gente vai até você. Três bases no Rio, todos os dias das 5h às 19h.",
       },
     ],
   },
@@ -57,6 +57,12 @@ const montarDadosEstruturados = (nota: number, total: number) => ({
   image: `${SITE_URL}/img/og.jpg`,
   logo: `${SITE_URL}/img/logo.png`,
   telephone: "+55-21-96016-6562",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "05:00",
+    closes: "19:00",
+  },
   sameAs: [empresa.instagram],
   areaServed: bases.flatMap((b) => b.bairros),
   address: {

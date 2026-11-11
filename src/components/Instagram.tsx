@@ -11,7 +11,7 @@ export function Instagram() {
             Veja os atendimentos no Instagram
           </h2>
           <p className="mt-3 max-w-[56ch] text-lg text-asfalto">
-            Fotos e vídeos dos socorros pelas ruas do Rio: carro, moto, caminhão e máquina, de dia e à noite.
+            Fotos e vídeos dos socorros pelas ruas do Rio: carro, moto, caminhão e máquina, todos os dias.
           </p>
           <p className="mt-3 text-lg font-bold break-all">{empresa.instagramUsuario}</p>
         </div>

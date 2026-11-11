@@ -1,6 +1,6 @@
 # Silva Pneus - Borracharia Móvel
 
-Site da Borracharia Silva Pneus, borracharia móvel com três bases no Rio de Janeiro (Parada de Lucas, Padre Miguel e Barra da Tijuca), com atendimento todos os dias até 22h.
+Site da Borracharia Silva Pneus, borracharia móvel com três bases no Rio de Janeiro (Parada de Lucas, Padre Miguel e Barra da Tijuca), com atendimento todos os dias das 5h às 19h.
 
 Demo: [borrachariasilva.vercel.app](https://borrachariasilva.vercel.app)
 
