@@ -48,7 +48,7 @@ export function Rodape() {
           <p>© {new Date().getFullYear()} {empresa.razaoSocial}, Rio de Janeiro, RJ</p>
           <p>
             Site feito por{" "}
-            <a href="https://matheusansel-dev.vercel.app" target="_blank" rel="noopener" className="underline underline-offset-4 hover:text-white">
+            <a href="https://matheusansel.pages.dev" target="_blank" rel="noopener" className="underline underline-offset-4 hover:text-white">
               Matheus Ansel
             </a>
           </p>

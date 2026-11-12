@@ -97,6 +97,6 @@ No build, `src/lib/google.ts` acha cada ficha pelo nome e pela coordenada da bas
 
 Desenvolvido por **Matheus Ansel**
 
-- Portfólio: [matheusansel-dev.vercel.app](https://matheusansel-dev.vercel.app)
+- Portfólio: [matheusansel.pages.dev](https://matheusansel.pages.dev)
 - LinkedIn: [linkedin.com/in/matheusansel](https://www.linkedin.com/in/matheusansel)
 - GitHub: [github.com/MatheusAnsel](https://github.com/MatheusAnsel)
